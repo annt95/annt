@@ -39,6 +39,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,20 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ApiAuthorizationModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    // AuthModule.forRoot({
+    //   config: {
+    //     authority: 'http://localhost:5001',
+    //     redirectUrl: window.location.origin,
+    //     postLogoutRedirectUri: window.location.origin,
+    //     clientId: 'angular',
+    //     scope: 'openid ApiOne',
+    //     responseType: 'code',
+    //     silentRenew: true,
+    //     useRefreshToken: true,
+    //     logLevel: LogLevel.Debug,
+    //   },
+    // }),
   ],
   providers: [
     ProcessHTTPMsgService,
